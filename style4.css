@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cor-primaria);
+}
+
+:root {
+  --cor-primaria: #8490ff;
+  --cor-secundaria: #004483;
+  --cor-terciaria: #22d4fd;
+  --cor-quartenaria: #ffd704;
+  --cor-quinternaria: #1a750c;
+
+  --fonte-primaria: "Krona One", sans-serif;
+  --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+.conteiner1 {
+  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  background-color: var(--cor-secundaria);
+}
+
+.float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 55rem;
+}
+
+.float2 {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.usuário {
+  margin-left: 3rem;
+  margin-right: 1rem;
+}
+
+.nomeusuário {
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.calendário {
+  margin-right: 3rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.fornecedor {
+  margin-right: 3rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.histórico {
+  margin-right: 2rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.notificação {
+  margin-right: 0rem;
+}
+
+.foto3 {
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+.foto4 {
+  max-width: 6rem;
+  max-height: 6rem;
+}
+
+.título4 {
+  text-align: center;
+  font-family: "Jomhuria", serif;
+  margin-top: 1rem;
+  font-size: 96px;
+  color: var(--cor-quartenaria);
+  letter-spacing: 4px;
+}
+
+.tabela {
+  top: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 100rem;
+  height: 50rem;
+  text-align: center;
+  font-size: 24px;
+  font-family: "arial";
+  border-color: var(--cor-secundaria);
+}
+
+th {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(182, 182, 182);
+}
+
+td {
+  font-family: "Inter", sans-serif;
+  background-color: whitesmoke;
+}
+
+caption {
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+}
+
+.refeição {
+  height: 10rem;
+  width: 15rem;
+}
+
+.valores {
+  height: 10rem;
+  width: 12rem;
+}
