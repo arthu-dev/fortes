@@ -1,0 +1,135 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cor-primaria);
+}
+
+:root {
+  --cor-primaria: #8490ff;
+  --cor-secundaria: #004483;
+  --cor-terciaria: #22d4fd;
+  --cor-quartenaria: #ffd704;
+  --cor-quinternaria: #1a750c;
+
+ 
+}
+
+.conteiner1 {
+  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  background-color: var(--cor-secundaria);
+}
+
+.float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 55rem;
+}
+
+.float2 {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.usuário {
+  margin-left: 3rem;
+  margin-right: 1rem;
+}
+
+.nomeusuário {
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.calendário {
+  margin-right: 3rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.fornecedor {
+  margin-right: 3rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.histórico {
+  margin-right: 2rem;
+  color: lightblue;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.notificação {
+  margin-right: 0rem;
+}
+
+.foto3 {
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+.foto4 {
+  max-width: 6rem;
+  max-height: 6rem;
+}
+
+.título3 {
+  font-size: 96px;
+  color: var(--cor-quartenaria);
+  font-family: "Jomhuria", serif;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.bloco {
+  display: flex;
+  justify-content: center;
+}
+
+.arcelor {
+  text-align: center;
+}
+
+.logo1 {
+  width: 30rem;
+  height: 12rem;
+  object-fit: cover;
+  border: none;
+  border-radius: 4rem;
+  margin-bottom: 3rem;
+}
+
+.logo2 {
+  width: 30rem;
+  height: 12rem;
+  object-fit: cover;
+  border: none;
+  border-radius: 4rem;
+  margin-bottom: 3rem;
+}
+
+.logo3 {
+  width: 30rem;
+  height: 12rem;
+  object-fit: cover;
+  border: none;
+  border-radius: 4rem;
+  margin-bottom: 3rem;
+}

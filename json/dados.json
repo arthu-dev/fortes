@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nome": "Exemplo 1",
+        "descricao": "Descrição do exemplo 1"
+    },
+    {
+        "id": 2,
+        "nome": "Exemplo 2",
+        "descricao": "Descrição do exemplo 2"
+    },
+    {
+        "id": 3,
+        "nome": "Exemplo 3",
+        "descricao": "Descrição do exemplo 3"
+    }
+    
+]

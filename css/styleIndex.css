@@ -1,0 +1,89 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cor-primaria);
+}
+
+:root {
+  --cor-primaria: #8490ff;
+  --cor-secundaria: #004483;
+  --cor-terciaria: #22d4fd;
+  --cor-quartenaria: #ffd704;
+  --cor-quinternaria: #1a750c;
+
+}
+
+.título {
+  font-size: 148px;
+  color: var(--cor-quartenaria);
+  font-family: "Jomhuria", serif;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-login {
+  background-color: white;
+  padding: 5rem;
+  border-radius: 5rem;
+  border: 0.5rem solid var(--cor-secundaria);
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 30rem;
+  height: 15rem;
+  margin-top: 3rem;
+}
+
+.foto1 {
+  margin-right: 15rem;
+}
+
+.entrar {
+  margin-top: 2rem;
+}
+
+#login {
+  border: 0.15rem solid black;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+  margin-top: 1.5rem;
+  width: 20rem;
+  height: 1.3rem;
+}
+
+#senha {
+  border: 0.15rem solid black;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 20rem;
+  height: 1.3rem;
+}
+
+#enviar {
+  width: 5rem;
+  color: black;
+  background-color: rgb(79, 255, 79);
+  border-radius: 1rem;
+}
+
+.recuperar {
+  margin-right: 14rem;
+  color: black;
+}
+
+.foto2 {
+  margin-top: 5rem;
+  max-width: 13rem;
+}

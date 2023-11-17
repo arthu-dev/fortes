@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela com JSON</title>
+    <style>
+        /* Estilos para a tabela e scroll */
+        #tabela-container {
+            max-height: 300px; /* Altura máxima da tabela */
+            overflow-y: scroll; /* Adiciona um scroll vertical */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabela-container">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo"></tbody>
+        </table>
+    </div>
+
+    <script> 
+        fetch('dados.json')
+            .then(response => response.json())
+            .then(data => {
+                const tabelaCorpo = document.getElementById('tabela-corpo');
+
+                data.forEach(item => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${item.id}</td>
+                        <td>${item.nome}</td>
+                        <td>${item.descricao}</td>
+                    `;
+                    tabelaCorpo.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados:', error));
+    </script>
+</body>
+</html>
