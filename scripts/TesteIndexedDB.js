@@ -5,7 +5,7 @@ window.webkitIndexedDB ||
 window.msIndexedDB ||
 window.shimIndexedDB;
 
-let request = indexedDB.open('MeuDB', 1);
+let request = indexedDB.open('Meu_DB', 1);
 let db;
 
 request.onerror = function (event) {
@@ -15,7 +15,7 @@ console.log('Erro ao abrir o banco de dados:', event.target.errorCode);
 request.onupgradeneeded = function (event) {
 db = event.target.result;
 
-let objectStore = db.createObjectStore('ExemploTable', { keyPath: 'id', autoIncrement: true });
+let objectStore = db.createObjectStore('Refeicoes', { keyPath: 'id', autoIncrement: true });
 
 objectStore.createIndex('data', 'data', { unique: false });
 objectStore.createIndex('refeicao', 'refeicao', { unique: false });
@@ -34,12 +34,12 @@ db = event.target.result;
 console.log('Conexão bem-sucedida com o banco de dados');
 };
 function adicionarDados() {
-  fetch('json/dados.json') // Insira o caminho correto do seu arquivo JSON
+  fetch('json/dados.json') 
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    let transaction = db.transaction(['ExemploTable'], 'readwrite');
-    let objectStore = transaction.objectStore('ExemploTable');
+    let transaction = db.transaction(['Refeicoes'], 'readwrite');
+    let objectStore = transaction.objectStore('Refeicoes');
 
     data.forEach(item => {
       let request = objectStore.add(item);
@@ -59,8 +59,8 @@ function adicionarDados() {
 
 function deletarDados(){
 
-let transaction = db.transaction(['ExemploTable'], 'readwrite');
-let objectStore = transaction.objectStore('ExemploTable');
+let transaction = db.transaction(['Refeicoes'], 'readwrite');
+let objectStore = transaction.objectStore('Refeicoes');
 
 let request = objectStore.clear();
 
@@ -73,8 +73,8 @@ request.onerror = function(event) {
 };
 }
 function buscarDadosData(dataBusca) {
-let transaction = db.transaction(['ExemploTable'], 'readonly');
-let objectStore = transaction.objectStore('ExemploTable');
+let transaction = db.transaction(['Refeicoes'], 'readonly');
+let objectStore = transaction.objectStore('Refeicoes');
 
 if (!objectStore.indexNames.contains('data')) {
   objectStore.createIndex('data', 'data');
@@ -110,8 +110,6 @@ request.onerror = function (event) {
   console.log('Erro na busca:', event.target.errorCode);
 };
 }
-
-
 
 const inputDate = document.getElementById('dataSelecionada');
 
