@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -15,15 +13,14 @@ body {
   --cor-terciaria: #22d4fd;
   --cor-quartenaria: #ffd704;
   --cor-quinternaria: #1a750c;
-  --cor-sextenaria: #3abb25;
-  --cor-heptenaria: #183c10;
 
- 
 }
 
 .conteiner1 {
+  height: 8vh;
   margin-top: 0rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 28px;
   background-color: var(--cor-secundaria);
@@ -32,10 +29,8 @@ body {
 .float {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-right: 55rem;
 }
 
 .float2 {
@@ -44,6 +39,7 @@ body {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 
 .usuário {
   margin-left: 3rem;
@@ -91,7 +87,7 @@ body {
   max-height: 6rem;
 }
 
-.título5 {
+.título4 {
   text-align: center;
   font-family: "Jomhuria", serif;
   margin-top: 1rem;
@@ -100,68 +96,80 @@ body {
   letter-spacing: 4px;
 }
 
-#Enviar {
-  border: solid var(--cor-heptenaria) 0.3rem;
-  background-color: var(--cor-sextenaria);
-  padding: 0.5rem;
-  border-radius: 2rem;
-  width: 9rem;
-  color: black;
-  font-size: 24px;
-  font-family: "Inter", sans-serif;
-  cursor: pointer;
-}
-
-.conjunto {
-  max-width: 80rem;
-  max-height: 5.2rem;
-  padding: 1rem;
-  border: solid var(--cor-secundaria) 0.5rem;
-  border-radius: 5rem;
-  background-color: white;
+.teste {
   display: flex;
   justify-content: center;
+  /* Centraliza horizontalmente */
   align-items: center;
+  /* Centraliza verticalmente */
+  height: 10vh;
+  /* Ajuste a altura conforme necessário */
 }
 
-#descrição {
-  width: 70rem;
-  background-color: white;
-  font-size: 20px;
-  text-align: justify;
-  border: none;
-  margin-left: 2rem;
-}
-
-.data {
-  font-size: 24px;
-  font-family: "Inter", sans-serif;
-  margin-left: 2rem;
-}
-
-.conteiner5 {
+.floati {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* Alinha os itens verticalmente */
   align-items: center;
+  /* Centraliza os itens horizontalmente */
 }
 
-.conjunto2 {
-  max-width: 80rem;
-  max-height: 12rem;
-  padding: 1rem;
-  border: solid var(--cor-secundaria) 0.5rem;
-  border-radius: 5rem;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#quantidade {
-  width: 10rem;
-  height: 14rem;
-  background-color: white;
-  font-size: 20px;
+.DataLabel {
   text-align: center;
-  border: solid var(--cor-secundaria) 0.5rem;
+  font-family: "Jomhuria", serif;
+  font-size: 3rem;
+  color: var(--cor-secundaria);
+  margin: 10px;
+  /* Adicione margem entre os elementos se necessário */
+}
+
+.tabela {
+  top: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 100rem;
+  height: 50rem;
+  text-align: center;
+  font-size: 24px;
+  font-family: "arial";
+  border-color: var(--cor-secundaria);
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(182, 182, 182);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+td {
+  font-family: "Inter", sans-serif;
+  background-color: whitesmoke;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+
+
+caption {
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+}
+
+.refeição {
+  height: 10rem;
+  width: 15rem;
+}
+
+.valores {
+  height: 10rem;
+  width: 12rem;
 }

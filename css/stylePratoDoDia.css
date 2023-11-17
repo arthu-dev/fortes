@@ -1,4 +1,5 @@
 
+
 * {
   margin: 0;
   padding: 0;
@@ -15,12 +16,13 @@ body {
   --cor-quartenaria: #ffd704;
   --cor-quinternaria: #1a750c;
 
- 
+  
 }
-
 .conteiner1 {
+  height: 8vh;
   margin-top: 0rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 28px;
   background-color: var(--cor-secundaria);
@@ -29,10 +31,8 @@ body {
 .float {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-right: 55rem;
 }
 
 .float2 {
@@ -41,6 +41,7 @@ body {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 
 .usuário {
   margin-left: 3rem;
@@ -54,7 +55,7 @@ body {
 }
 
 .calendário {
-  margin-right: 3rem;
+  margin-left: 25rem;
   color: lightblue;
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -116,9 +117,9 @@ body {
   border: 0.5rem solid var(--cor-secundaria);
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
+  width: 20rem;
+  height: 20rem;
+  margin-top: 12rem;
   margin-right: 10rem;
 }
 
@@ -129,8 +130,8 @@ body {
   border: 0.5rem solid var(--cor-secundaria);
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 14rem;
-  height: 14rem;
+  width: 20rem;
+  height: 20rem;
   margin-top: 3rem;
 }
 
@@ -141,74 +142,53 @@ body {
   border: 0.5rem solid var(--cor-secundaria);
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
+  width: 20rem;
+  height: 20rem;
+  margin-top: 12rem;
   margin-left: 10rem;
 }
 
-.quinta {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 5rem;
-  border: 0.5rem solid var(--cor-secundaria);
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
-}
-
-.sexta {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 5rem;
-  border: 0.5rem solid var(--cor-secundaria);
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
-}
-
-.sábado {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 5rem;
-  border: 0.5rem solid var(--cor-secundaria);
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
-}
-
-.domingo {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 5rem;
-  border: 0.5rem solid var(--cor-secundaria);
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 14rem;
-  height: 14rem;
-  margin-top: 3rem;
-}
-
 .alimento1 {
-  max-width: 8rem;
-  max-height: 8rem;
-  margin-bottom: 1rem;
+  max-width: 10rem;
+  max-height: 10rem;
+  margin-bottom: 3rem;
 }
 
 .texto1 {
-  font-size: 24px;
+  font-size: 30px;
   color: var(--cor-quinternaria);
-  margin-bottom: 2rem;
   font-family: "Inter", sans-serif;
 }
 
 .dia {
   font-size: 24px;
   font-family: "Inter", sans-serif;
+  border: solid var(--cor-secundaria) 0.2rem;
+  background-color: #ffd704;
+  border-radius: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 3.2rem;
+}
+
+.dia2 {
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  border: solid var(--cor-secundaria) 0.2rem;
+  background-color: #16a324;
+  border-radius: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 5.5rem;
+}
+
+.dia3 {
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  border: solid var(--cor-secundaria) 0.2rem;
+  background-color: #0500ff;
+  border-radius: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 5.5rem;
 }

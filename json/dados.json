@@ -1,18 +1,134 @@
 [
     {
         "id": 1,
-        "nome": "Exemplo 1",
-        "descricao": "Descrição do exemplo 1"
+        "data": "2023-11-17",
+        "refeicao": "Janta",
+        "pratoDoDia": "Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e cebola) e salada de frutas",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
     },
     {
         "id": 2,
-        "nome": "Exemplo 2",
-        "descricao": "Descrição do exemplo 2"
+        "data": "2023-11-18",
+        "refeicao": "Janta",
+        "pratoDoDia": "MiniPizza (presunto, queijo e orégano/tomate e cebola) ",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
     },
     {
         "id": 3,
-        "nome": "Exemplo 3",
-        "descricao": "Descrição do exemplo 3"
+        "data": "2023-11-19",
+        "refeicao": "Janta",
+        "pratoDoDia": "Lasanha a bolonhesa ",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+   {
+        "id": 4,
+        "data": "2023-11-20",
+        "refeicao": "Janta",
+        "pratoDoDia": "Strogonofe de frango com arroz e batata palha",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 5,
+        "data": "2023-11-17",
+        "refeicao": "Almoço",
+        "pratoDoDia": "Arroz, feiijão e carne moída com batata",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 6,
+        "data": "2023-11-18",
+        "refeicao": "Almoço",
+        "pratoDoDia": "Macarrão com queijo",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 7,
+        "data": "2023-11-19",
+        "refeicao": "Almoço",
+        "pratoDoDia": "Lasanha a bolonhesa ",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+   {
+        "id": 8,
+        "data": "2023-11-20",
+        "refeicao": "Almoço",
+        "pratoDoDia": "Strogonofe de frango com arroz e batata palha",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 9,
+        "data": "2023-11-17",
+        "refeicao": "Café",
+        "pratoDoDia": "Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e cebola) e salada de frutas",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 10,
+        "data": "2023-11-18",
+        "refeicao": "Café",
+        "pratoDoDia": "Misto quente e café/suco",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+    {
+        "id": 11,
+        "data": "2023-11-19",
+        "refeicao": "Café",
+        "pratoDoDia": "Bolo de cenoura com chocolate",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
+    },
+   {
+        "id": 12,
+        "data": "2023-11-20",
+        "refeicao": "Café",
+        "pratoDoDia": "Pão na chapa com café",
+        "totalFeito": 300,
+        "totalConsumindo": 214,
+        "totalDesperdicado": 86,
+        "valorTotal": 2040.00,
+        "precoUnitario": 6.80
     }
-    
 ]

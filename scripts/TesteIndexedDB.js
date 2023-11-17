@@ -34,28 +34,42 @@ db = event.target.result;
 console.log('Conexão bem-sucedida com o banco de dados');
 };
 function adicionarDados() {
+  fetch('json/dados.json') // Insira o caminho correto do seu arquivo JSON
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    let transaction = db.transaction(['ExemploTable'], 'readwrite');
+    let objectStore = transaction.objectStore('ExemploTable');
+
+    data.forEach(item => {
+      let request = objectStore.add(item);
+      request.onsuccess = function (event) {
+        console.log('Dados adicionados com sucesso!');
+      };
+
+      request.onerror = function (event) {
+        console.log('Erro ao adicionar dados:', event.target.errorCode);
+      };
+    });
+  })
+  .catch(error => {
+    console.log('Erro ao buscar o arquivo JSON:', error);
+  });
+}
+
+function deletarDados(){
+
 let transaction = db.transaction(['ExemploTable'], 'readwrite');
 let objectStore = transaction.objectStore('ExemploTable');
-let dados = {
-  id: 6,
-  data: "2023-11-17",
-  refeicao: 'Janta3',
-  pratoDoDia: 'Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e cebola) e salada de frutas',
-  totalFeito: 300,
-  totalConsumindo: 214,
-  totalDesperdicado: 86,
-  valorTotal: 2040.00,
-  precoUnitario: 6.80
+
+let request = objectStore.clear();
+
+request.onsuccess = function(event) {
+  console.log('Todos os registros foram apagados com sucesso!');
 };
 
-let request = objectStore.add(dados);
-
-request.onsuccess = function (event) {
-  console.log('Dados adicionados com sucesso!');
-};
-
-request.onerror = function (event) {
-  console.log('Erro ao adicionar dados:', event.target.errorCode);
+request.onerror = function(event) {
+  console.log('Erro ao apagar os registros:', event.target.errorCode);
 };
 }
 function buscarDadosData(dataBusca) {
