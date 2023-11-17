@@ -36,185 +36,62 @@
     </div>
   </div>
   <h1 class="título4">Dados coletados</h1>
-
+  <div class="teste">
+    <div class="floati">
+      <label class="DataLabel" for="dataSelecionada">Selecione uma data:</label>
+      <input type="date" id="dataSelecionada">
+      <button onclick="adicionarDados()">Adicionar Dados</button>
+    </div>
+  </div>
   <table class="tabela" border="10">
-    <label for="dataSelecionada">Selecione uma data:</label>
-    <input type="date" id="dataSelecionada">
-
-    <button onclick="adicionarDados()">adicionarDados</button>
-    <div id="dados"></div>
-
-
-    <tbody>
+    <thead>
       <tr>
-        <th class="refeição"><strong>Refeição</strong></th>
-        <th><strong>Prato do dia</strong></th>
-        <th class="valores"><strong>Total feito</strong></th>
-        <th class="valores"><strong>Total consumido</strong></th>
-        <th class="valores"><strong>Total desperdiçado</strong></th>
-        <th class="valores"><strong>Valor total</strong></th>
-        <th class="valores"><strong>Preço unitário</strong></th>
+        <th>Refeição</th>
+        <th>Prato do dia</th>
+        <th>Total feito</th>
+        <th>Total consumido</th>
+        <th>Total desperdiçado</th>
+        <th>Valor total</th>
+        <th>Preço unitário</th>
+      </tr>
+    </thead>
+    <tbody id="dados">
+      <tr>
+        <td>Café</td>
+        <td>30 pratos diferentes</td>
+        <td>3148</td>
+        <td>2675</td>
+        <td>473</td>
+        <td>R$23.861,84</td>
+        <td>R$7.58</td>
       </tr>
       <tr>
-        <td class="refeição">Café</td>
-        <td>
-          Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e
-          cebola) e salada de frutas
-        </td>
-        <td>300</td>
-        <td>214</td>
-        <td>86</td>
-        <td>R$ 2.040,00</td>
-        <td>R$ 6,80</td>
+        <td>Almoço</td>
+        <td>47 pratos diferentes</td>
+        <td>3215</td>
+        <td>3077</td>
+        <td>138</td>
+        <td>R$41.152</td>
+        <td>R$12.80</td>
+      </tr>
+      <tr>
+        <td>Janta</td>
+        <td>26 pratos diferentes</td>
+        <td>2565</td>
+        <td>2006</td>
+        <td>559</td>
+        <td>R$40.065,3</td>
+        <td>R$15,62</td>
       </tr>
 
-      <tr>
-        <td class="refeição">Café</td>
-        <td>
-          Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e
-          cebola) e salada de frutas
-        </td>
-        <td>300</td>
-        <td>214</td>
-        <td>86</td>
-        <td>R$ 2.040,00</td>
-        <td>R$ 6,80</td>
-      </tr>
-
-      <tr>
-        <td class="refeição">Café</td>
-        <td>
-          Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e
-          cebola) e salada de frutas
-        </td>
-        <td>300</td>
-        <td>214</td>
-        <td>86</td>
-        <td>R$ 2.040,00</td>
-        <td>R$ 6,80</td>
-      </tr>
     </tbody>
   </table>
+  <script src="scripts/TesteIndexedDB.js"></script>
+  <script>
+    window.onload = function () {
+      document.body.style.zoom = "70%"; // Define o zoom da página
+    };
+  </script>
 </body>
-<script>
-
-  const indexedDB =
-    window.indexedDB ||
-    window.mozIndexedDB ||
-    window.webkitIndexedDB ||
-    window.msIndexedDB ||
-    window.shimIndexedDB;
-
-
-  let request = indexedDB.open('MeuDB', 1);
-  let db;
-
-  request.onerror = function (event) {
-    console.log('Erro ao abrir o banco de dados:', event.target.errorCode);
-  };
-
-  // Evento chamado apenas na criação do banco ou quando a versão é atualizada
-  request.onupgradeneeded = function (event) {
-    db = event.target.result;
-
-    // Cria uma nova 'tabela' chamada 'ExemploTable' com um campo 'id' como chave primária
-    let objectStore = db.createObjectStore('ExemploTable', { keyPath: 'id', autoIncrement: true });
-
-    // Define os campos que deseja armazenar na 'tabela'
-
-
-    // Criando índices para os campos que serão utilizados
-    objectStore.createIndex('data', 'data', { unique: false });
-    objectStore.createIndex('refeicao', 'refeicao', { unique: false });
-    objectStore.createIndex('pratoDoDia', 'pratoDoDia', { unique: false });
-    objectStore.createIndex('totalFeito', 'totalFeito', { unique: false });
-    objectStore.createIndex('totalConsumindo', 'totalConsumindo', { unique: false });
-    objectStore.createIndex('totalDesperdicado', 'totalDesperdicado', { unique: false });
-    objectStore.createIndex('valorTotal', 'valorTotal', { unique: false });
-    objectStore.createIndex('precoUnitario', 'precoUnitario', { unique: false });
-
-
-    console.log('Banco de dados criado com sucesso!');
-  };
-
-  // Evento acionado quando a conexão com o banco é aberta com sucesso
-  request.onsuccess = function (event) {
-    db = event.target.result;
-    console.log('Conexão bem-sucedida com o banco de dados');
-
-    // Exemplo de adição de dados com uma data como chave primária
-    let transaction = db.transaction(['ExemploTable'], 'readwrite');
-    let objectStore = transaction.objectStore('ExemploTable');
-
-
-    // Dados a serem adicionados
-
-
-  };
-  // Exemplo de função para buscar dados na tabela
-  function buscarDadosData(dataBusca) {
-    let transaction = db.transaction(['ExemploTable'], 'readonly');
-    let objectStore = transaction.objectStore('ExemploTable');
-
-    // Criando um índice para o campo 'data', caso não exista
-    if (!objectStore.indexNames.contains('data')) {
-      objectStore.createIndex('data', 'data');
-    }
-
-    // Obtendo um índice
-    let dataIndex = objectStore.index('data');
-
-    // Usando o índice para buscar todos os registros correspondentes à data '2023-11-15'
-    let range = IDBKeyRange.only(dataBusca);
-    let request = dataIndex.openCursor(range);
-
-    request.onsuccess = function (event) {
-      let cursor = event.target.result;
-      if (cursor) {
-        // Exibindo dados correspondentes à data buscada
-        console.log('Dados encontrados:', cursor.value);
-        cursor.continue(); // Continua a busca por mais dados correspondentes
-      } else {
-        console.log('Busca concluída.');
-      }
-    };
-
-    request.onerror = function (event) {
-      console.log('Erro na busca:', event.target.errorCode);
-    };
-    const inputDate = document.getElementById('dataSelecionada');
-
-    // Adiciona um evento 'change' ao input de data para chamar buscarDadosData quando a data for alterada
-    inputDate.addEventListener('change', function () {
-      const dataSelecionada = inputDate.value;
-      buscarDadosData(dataSelecionada);
-    });
-  }
-  function adicionarDados() {
-    let transaction = db.transaction(['ExemploTable'], 'readwrite');
-    let objectStore = transaction.objectStore('ExemploTable');
-    let dados = {
-      id: 1,
-      data: "2023-11-15",
-      refeicao: 'Almoço',
-      pratoDoDia: 'Lasanha',
-      totalFeito: 10,
-      totalConsumindo: 8,
-      totalDesperdicado: 2,
-      valorTotal: 50.0,
-      precoUnitario: 5.0
-    };
-
-    let request = objectStore.add(dados);
-
-    request.onsuccess = function (event) {
-      console.log('Dados adicionados com sucesso!');
-    };
-
-    request.onerror = function (event) {
-      console.log('Erro ao adicionar dados:', event.target.errorCode);
-    };
-  }
-</script>
 
 </html>
