@@ -1,0 +1,159 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Variáveis de cor */
+  :root {
+    --cor-primaria: #8490ff;
+    --cor-secundaria: #004483;
+    --cor-terciaria: #22d4fd;
+    --cor-quartenaria: #ffd704;
+    --cor-quinternaria: #1a750c;
+  }
+  
+  /* Estilos gerais */
+  body {
+    background-color: var(--cor-primaria);
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Estilos para a barra superior */
+  .conteiner1 {
+    margin-top: 0rem;
+    display: flex;
+    align-items: center;
+    font-size: 2.5vw; /* Alterando o tamanho da fonte para usar uma unidade relativa */
+    background-color: var(--cor-secundaria);
+    min-height: 10vh; /* Altura mínima em viewport height */
+  }
+  
+  .float {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+  }
+  
+  .float2 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .usuário {
+    margin-left: 3rem;
+    margin-right: 1rem;
+  }
+  
+  .nomeusuário,
+  .calendário,
+  .fornecedor,
+  .histórico {
+    color: lightblue;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    margin-right: 1rem;
+  }
+  
+  .notificação {
+    margin-right: 0;
+  }
+  
+  .foto3 {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  
+  .foto4 {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+  
+  /* Estilos para o título */
+  .título4 {
+    text-align: center;
+    font-family: "Jomhuria", serif;
+    margin-top: 1rem;
+    font-size: 96px;
+    color: var(--cor-quartenaria);
+    letter-spacing: 4px;
+  }
+  
+  /* Estilos para a seção de seleção de data */
+  .teste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .floati {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .DataLabel {
+    text-align: center;
+    font-family: "Jomhuria", serif;
+    font-size: 3rem;
+    color: var(--cor-secundaria);
+    margin: 10px;
+  }
+  
+  /* Estilos para a tabela */
+  .tabela {
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 80vw; /* Largura em viewport width */
+    min-height: 40vh; /* Altura mínima em viewport height */
+    font-size: 1.5vw; /* Alterando o tamanho da fonte para usar uma unidade relativa */
+    font-family: "Arial", sans-serif;
+    border-color: var(--cor-secundaria);
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    font-family: "Inter", sans-serif;
+    padding: 1rem 2rem;
+  }
+  th{
+    background-color: rgb(182, 182, 182);
+  }
+
+  td{
+    background-color: white;
+  }
+  caption {
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+  }
+  
+  /* Media queries para tornar o layout responsivo conforme necessário */
+  @media screen and (max-width: 768px) {
+    .conteiner1 {
+      flex-direction: column;
+    }
+  
+    .float,
+    .float2 {
+      margin: 0;
+    }
+  
+    .float2 {
+      margin-top: 10px;
+    }
+  
+    .usuário,
+    .float2 {
+      margin-left: 0;
+    }
+  }

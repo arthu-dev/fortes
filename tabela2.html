@@ -22,7 +22,7 @@
   <div class="conteiner1">
     <div class="float">
       <a href="index.html" class="usuário">
-        <img src="usuário.png" class="foto3" alt="Imagem de usuário" />
+        <img src="assets/usuário.png" class="foto3" alt="Imagem de usuário" />
       </a>
       <a href="index.html" class="nomeusuário">Nome de usuário</a>
     </div>
@@ -31,17 +31,18 @@
       <a href="pedido.html" class="fornecedor">Fornecedor</a>
       <a href="" class="histórico">Histórico</a>
       <a href="" class="notificação">
-        <img src="notificação.png" class="foto4" alt="Imagem de notificação" />
+        <img src="assets/notificação.png" class="foto4" alt="Imagem de notificação" />
       </a>
     </div>
   </div>
   <h1 class="título4">Dados coletados</h1>
-
-  <label for="dataSelecionada">Selecione uma data:</label>
-  <input type="date" id="dataSelecionada">
-
-  <button onclick="adicionarDados()">Adicionar Dados</button>
-
+  <div class="teste">
+    <div class="floati">
+      <label class="DataLabel" for="dataSelecionada">Selecione uma data:</label>
+      <input type="date" id="dataSelecionada">
+      <button onclick="adicionarDados()">Adicionar Dados</button>
+    </div>
+  </div>
   <table class="tabela" border="10">
     <thead>
       <tr>
@@ -58,6 +59,9 @@
   </table>
 
   <script>
+    window.onload = function () {
+      document.body.style.zoom = "70%"; // Define o zoom da página para 50%
+    };
     const indexedDB =
       window.indexedDB ||
       window.mozIndexedDB ||
@@ -97,15 +101,15 @@
       let transaction = db.transaction(['ExemploTable'], 'readwrite');
       let objectStore = transaction.objectStore('ExemploTable');
       let dados = {
-        id: 3,
-        data: "2023-11-15",
-        refeicao: 'Janta',
-        pratoDoDia: 'arroz puro',
-        totalFeito: 10,
-        totalConsumindo: 8,
-        totalDesperdicado: 2,
-        valorTotal: 50.0,
-        precoUnitario: 5.0
+        id: 6,
+        data: "2023-11-17",
+        refeicao: 'Janta3',
+        pratoDoDia: 'Tapioca (frango com catupiry/ presunto, queijo e orégano/tomate e cebola) e salada de frutas',
+        totalFeito: 300,
+        totalConsumindo: 214,
+        totalDesperdicado: 86,
+        valorTotal: 2040.00,
+        precoUnitario: 6.80
       };
 
       let request = objectStore.add(dados);
@@ -142,8 +146,8 @@
             <td>${cursor.value.totalFeito}</td>
             <td>${cursor.value.totalConsumindo}</td>
             <td>${cursor.value.totalDesperdicado}</td>
-            <td>${cursor.value.valorTotal}</td>
-            <td>${cursor.value.precoUnitario}</td>
+            <td>R$ ${cursor.value.valorTotal}</td>
+            <td>R$ ${cursor.value.precoUnitario}</td>
           `;
           tabela.appendChild(row);
           cursor.continue();
@@ -157,7 +161,7 @@
       };
     }
 
-    
+
 
     const inputDate = document.getElementById('dataSelecionada');
 

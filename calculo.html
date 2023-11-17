@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style6.css" />
+    <link rel="stylesheet" href="css/style6.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +22,7 @@
     <div class="conteiner1">
       <div class="float">
         <a href="index.html" class="usuário">
-          <img src="usuário.png" class="foto3" alt="Imagem de usuário" />
+          <img src="assets/usuário.png" class="foto3" alt="Imagem de usuário" />
         </a>
         <a href="index.html" class="nomeusuário">Nome de usuário</a>
       </div>
@@ -34,7 +34,7 @@
         <a hidden href="" class="histórico" target="_blank">Histórico</a>
         <a hidden href="notificação.html" class="notificação" target="_blank">
           <img
-            src="notificação.png"
+            src="assets/notificação.png"
             class="foto4"
             alt="Imagem de notificação"
           />
@@ -45,7 +45,7 @@
 
     <div class="conjunto">
       <div class="conteiner6">
-        <!--  Menu dropdown  -->
+        
         <select name="pratos" id="select_pratos">
           <option selected disabled hidden>Selecione o prato</option>
           <option class="valor" value="prato_1">Prato 1</option>
@@ -55,9 +55,9 @@
           <option class="valor" value="prato_5">Prato 5</option>
           <option class="valor" value="prato_6">Prato 6</option>
         </select>
-        <!--  Fim do menu dropdown  -->
+       
 
-        <!--  Input desabilitado apenas para mostrar o valor do prato  -->
+        
         <input
           type="text"
           id="valor_prato"
@@ -66,16 +66,16 @@
           disabled
         />
 
-        <!--  Usuário digita a quantidade  -->
+       
         <input type="number" placeholder="Quantidade" id="quantidade" />
       </div>
 
       <span class="conteiner7">
-        <!--  Usuário clica para calcular o valor * quantidade, chama a função calcularValor()  -->
+      
         <button class="botão" onClick="calcularValor()">Calcular</button>
       </span>
 
-      <!--  Local onde vai mostrar o resultado  -->
+    
       <span class="conteiner7">
         <div>
           <h3 class="resultado">Valor Total: <span id="valor_total"></span></h3>

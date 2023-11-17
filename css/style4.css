@@ -17,8 +17,10 @@ body {
 }
 
 .conteiner1 {
+  height: 8vh;
   margin-top: 0rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 28px;
   background-color: var(--cor-secundaria);
@@ -27,10 +29,8 @@ body {
 .float {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-right: 55rem;
 }
 
 .float2 {
@@ -95,6 +95,33 @@ body {
   letter-spacing: 4px;
 }
 
+.teste {
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  height: 10vh;
+  /* Ajuste a altura conforme necessário */
+}
+
+.floati {
+  display: flex;
+  flex-direction: column;
+  /* Alinha os itens verticalmente */
+  align-items: center;
+  /* Centraliza os itens horizontalmente */
+}
+
+.DataLabel {
+  text-align: center;
+  font-family: "Jomhuria", serif;
+  font-size: 3rem;
+  color: var(--cor-secundaria);
+  margin: 10px;
+  /* Adicione margem entre os elementos se necessário */
+}
+
 .tabela {
   top: 60%;
   position: absolute;
@@ -106,17 +133,29 @@ body {
   font-size: 24px;
   font-family: "arial";
   border-color: var(--cor-secundaria);
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 th {
   font-family: "Inter", sans-serif;
   background-color: rgb(182, 182, 182);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 td {
   font-family: "Inter", sans-serif;
   background-color: whitesmoke;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
+
+
 
 caption {
   text-align: left;
