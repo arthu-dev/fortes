@@ -30,7 +30,7 @@ request.onsuccess = function (event) {
     console.log('Conexão bem-sucedida com o banco de dados');
 };
 function adicionarDadosDoJson() {
-    fetch('json/dadosNotificacao.json')
+    fetch('json/dadosFornecedor.json')
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -66,14 +66,19 @@ function formatarData(data) {
 function adicionarDados() {
     let mensagem = document.getElementById("descrição").value;
     let dataForm = formatarData(document.getElementById("dataSelecionada").value);
+    let quantidade = document.getElementById("quantidade").value;
+    console.log(mensagem);
+    console.log(dataForm);
+    console.log(quantidade);
     let dados = {
         "data": dataForm,
-        "mensagem": mensagem
+        "mensagem": mensagem,
+        "quantidade": quantidade
     }
     let transaction = db.transaction(['NotificacaoForne'], 'readwrite');
     let objectStore = transaction.objectStore('NotificacaoForne');
 
-    if (mensagem == "" || dataForm === NaN) { alert("Campos em branco") } else {
+    if (mensagem == "" || dataForm == "NaN/NaN/NaN" || quantidade=== NaN) { alert("Campos em branco") } else {
         let request = objectStore.add(dados);
         request.onsuccess = function () {
             console.log('Dados adicionados com sucesso!');
@@ -84,7 +89,7 @@ function adicionarDados() {
         };
 
     }
-
+    mostrarTodosDados();
 }
 
 function deletarDados() {
@@ -117,6 +122,7 @@ function mostrarTodosDados() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${cursor.value.mensagem}</td>
+                <td>${cursor.value.quantidade}</td>
                 <td>${cursor.value.data}</td>
             `;
             tabela.appendChild(row);

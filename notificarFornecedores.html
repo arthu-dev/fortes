@@ -39,35 +39,36 @@
   <h1 class="título5">Notificar os fornecedores</h1>
   <div class="conteiner5">
     <form action="">
-      <input type="submit" value="Enviar" id="Enviar" name="Enviar" />
+      <input type="submit" value="Enviar" id="Enviar" name="Enviar" onclick="adicionarDados()"/>
 
       <br></br>
       <div class="conjunto2">
         <textarea name="descrição" id="descrição" class="áreatexto" cols="100" rows="9"
-          placeholder="Alimento e quantidade"></textarea>
+          placeholder="Alimento "></textarea>
         <input type="text" id="quantidade" placeholder="Quantidade...">
-        <h6 class="data">13/03/2023</h6>
+        <input type="date" class="data" id="dataSelecionada" >
       </div>
     </form>
   </div>
-  <table class="tabela" border="10">
-    <tbody id="dados">
-      <tr>
-        <td>Texto</td>
-        <td>data</td>
-      </tr>
-      <tr>
-        <td>Texto</td>
-        <td>data</td>
-      </tr>
-      <tr>
-        <td>Texto</td>
-        <td>data</td>
-      </tr>
+  <div class="conteiner5">
+        
+    <table class="tabela" border="10">
+        <thead><tr><td>Historico de notificação</td><td>Quantidade</td><td>Data</td></tr></thead>
+        <tbody id="dados">
 
-    </tbody>
-  </table>
-  <script src="scripts/notificacaoFornecedores.js" ></script>
+            <tr>
+                <td>Arroz, feijão, frango, alcatra, macarrão spaguetti,  molho bolonhesa, creme de leite, alface, cenoura e batata.</td>
+                <td>50</td> 
+                <td>17/11/23</td>
+
+            </tr>
+    
+
+        </tbody>
+    </table>
+</div>
+
+  <script src="scripts/notificacaoFornecedor.js" ></script>
 </body>
 
 </html>
