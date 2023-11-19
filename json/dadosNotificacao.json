@@ -1,25 +1,22 @@
 [
     {
         "id": 1,
-        "data": "2023-11-15",
-        "titulo": "Mudança de cardápio",
-        "mensagem": "o cardápio de quinta-feira foi alterado, o prato agora será peixe grelhado, pirão e arroz."
+        "data": "15/11/23",
+        "mensagem": "Mudança de cardápio: o cardápio de quinta-feira foi alterado, o prato agora será peixe grelhado, pirão e arroz."
        
     },
     {
         
         "id": 2,
-        "data": "2023-11-16",
-        "titulo": "Mudança de cardápio",
-        "mensagem": "o cardápio de quinta-feira foi alterado, o prato agora será peixe grelhado, pirão e arroz."
+        "data": "16/11/23",
+        "mensagem": "Mudança de cardápio: o cardápio de quinta-feira foi alterado, o prato agora será macarrão com queijo."
        
     },
     {
        
         "id": 3,
-        "data": "2023-11-17",
-        "titulo": "Mudança de cardápio",
-        "mensagem": "o cardápio de quinta-feira foi alterado, o prato agora será peixe grelhado, pirão e arroz."
+        "data": "17/11/23",
+        "mensagem": "Mudança de cardápio: o cardápio de Sexta foi alterado, o prato agora será lasanha."
        
     }  
 ]

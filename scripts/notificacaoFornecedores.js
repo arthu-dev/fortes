@@ -5,7 +5,7 @@ const indexedDB =
     window.msIndexedDB ||
     window.shimIndexedDB;
 
-let request = indexedDB.open('Notificacao_DB',1);
+let request = indexedDB.open('Notificoes_DB', 1);
 let db;
 
 request.onerror = function (event) {
@@ -15,10 +15,9 @@ request.onerror = function (event) {
 request.onupgradeneeded = function (event) {
     db = event.target.result;
 
-    let objectStore = db.createObjectStore('Notificacao', { keyPath: 'id', autoIncrement: true });
+    let objectStore = db.createObjectStore('NotificacaoFunci', { keyPath: 'id', autoIncrement: true });
 
     objectStore.createIndex('data', 'data', { unique: false });
-    objectStore.createIndex('titulo', 'titulo', { unique: false });
     objectStore.createIndex('mensagem', 'mensagem', { unique: false });
 
 
@@ -34,13 +33,14 @@ function adicionarDadosDoJson() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let transaction = db.transaction(['Notificacao'], 'readwrite');
-            let objectStore = transaction.objectStore('Notificacao');
+            let transaction = db.transaction(['NotificacaoFunci'], 'readwrite');
+            let objectStore = transaction.objectStore('NotificacaoFunci');
 
             data.forEach(item => {
                 let request = objectStore.add(item);
                 request.onsuccess = function () {
                     console.log('Dados adicionados com sucesso!');
+
                 };
 
                 request.onerror = function (event) {
@@ -51,37 +51,45 @@ function adicionarDadosDoJson() {
         .catch(error => {
             console.log('Erro ao buscar o arquivo JSON:', error);
         });
-       
+
 }
-function adicionarDados(refeicao,quant,data) {
-    fetch('json/dadosNotificacao.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let transaction = db.transaction(['Notificacao'], 'readwrite');
-            let objectStore = transaction.objectStore('Notificacao');
+function formatarData(data) {
+    const dataObj = new Date(data);
 
-            data.forEach(item => {
-                let request = objectStore.add(item);
-                request.onsuccess = function () {
-                    console.log('Dados adicionados com sucesso!');
-                };
+    const dia = dataObj.getDate().toString().padStart(2, '0');
+    const mes = (dataObj.getMonth() + 1).toString().padStart(2, '0');
+    const ano = dataObj.getFullYear();
 
-                request.onerror = function (event) {
-                    console.log('Erro ao adicionar dados:', event.target.errorCode);
-                };
-            });
-        })
-        .catch(error => {
-            console.log('Erro ao buscar o arquivo JSON:', error);
-        });
-       
+    return `${dia}/${mes}/${ano}`;
+}
+function adicionarDados() {
+    let mensagem = document.getElementById("descrição").value;
+    let dataForm = formatarData(document.getElementById("dataSelecionada").value);
+    let dados = {
+        "data": dataForm,
+        "mensagem": mensagem
+    }
+    let transaction = db.transaction(['NotificacaoFunci'], 'readwrite');
+    let objectStore = transaction.objectStore('NotificacaoFunci');
+
+    if (mensagem == "" || dataForm === NaN) { alert("Campos em branco") } else {
+        let request = objectStore.add(dados);
+        request.onsuccess = function () {
+            console.log('Dados adicionados com sucesso!');
+        };
+
+        request.onerror = function (event) {
+            console.log('Erro ao adicionar dados:', event.target.errorCode);
+        };
+
+    }
+
 }
 
 function deletarDados() {
 
-    let transaction = db.transaction(['Notificacao'], 'readwrite');
-    let objectStore = transaction.objectStore('Notificacao');
+    let transaction = db.transaction(['NotificacaoFunci'], 'readwrite');
+    let objectStore = transaction.objectStore('NotificacaoFunci');
 
     let request = objectStore.clear();
 
@@ -95,8 +103,8 @@ function deletarDados() {
 }
 
 function mostrarTodosDados() {
-    let transaction = db.transaction(['Notificacao'], 'readonly');
-    let objectStore = transaction.objectStore('Notificacao');
+    let transaction = db.transaction(['NotificacaoFunci'], 'readonly');
+    let objectStore = transaction.objectStore('NotificacaoFunci');
 
     let request = objectStore.openCursor();
     const tabela = document.getElementById('dados');
@@ -107,7 +115,7 @@ function mostrarTodosDados() {
         if (cursor) {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${cursor.value.titulo}: ${cursor.value.mensagem}</td>
+                <td>${cursor.value.mensagem}</td>
                 <td>${cursor.value.data}</td>
             `;
             tabela.appendChild(row);
@@ -121,6 +129,27 @@ function mostrarTodosDados() {
         console.log('Erro ao buscar dados:', event.target.errorCode);
     };
 }
-window.onload = function(){
-    mostrarTodosDados();
+function verificarTabelaVazia() {
+    //problema aqui, acho que chama essa funcao antes de chamar o banco e da erro
+    let transaction = db.transaction('NotificacaoFunci', 'readonly');
+    let objectStore = transaction.objectStore('NotificacaoFunci');
+
+    let request = objectStore.count();
+
+    request.onsuccess = async function (event) {
+        const count = event.target.result;
+        if (count === 0) {
+            await adicionarDadosDoJson();
+            await mostrarTodosDados();
+        } else {
+            await mostrarTodosDados();
+        }
+
+    };
+
+}
+
+
+window.onload = function () {
+    verificarTabelaVazia();
 };
