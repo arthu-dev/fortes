@@ -19,6 +19,7 @@ request.onupgradeneeded = function (event) {
 
     objectStore.createIndex('data', 'data', { unique: false });
     objectStore.createIndex('mensagem', 'mensagem', { unique: false });
+    objectStore.createIndex('quantidade', 'quantidade', { unique: false });
 
 
     console.log('Banco de dados criado com sucesso!');
