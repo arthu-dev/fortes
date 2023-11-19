@@ -96,32 +96,6 @@ body {
   letter-spacing: 4px;
 }
 
-.teste {
-  display: flex;
-  justify-content: center;
-  /* Centraliza horizontalmente */
-  align-items: center;
-  /* Centraliza verticalmente */
-  height: 10vh;
-  /* Ajuste a altura conforme necessário */
-}
-
-.floati {
-  display: flex;
-  flex-direction: column;
-  /* Alinha os itens verticalmente */
-  align-items: center;
-  /* Centraliza os itens horizontalmente */
-}
-
-.DataLabel {
-  text-align: center;
-  font-family: "Jomhuria", serif;
-  font-size: 3rem;
-  color: var(--cor-secundaria);
-  margin: 10px;
-  /* Adicione margem entre os elementos se necessário */
-}
 
 .tabela {
   top: 60%;
@@ -137,7 +111,6 @@ body {
   border-spacing: 0;
   border-collapse: collapse;
 }
-
 th {
   font-family: "Inter", sans-serif;
   background-color: rgb(182, 182, 182);
@@ -157,19 +130,3 @@ td {
 }
 
 
-
-caption {
-  text-align: left;
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-}
-
-.refeição {
-  height: 10rem;
-  width: 15rem;
-}
-
-.valores {
-  height: 10rem;
-  width: 12rem;
-}
