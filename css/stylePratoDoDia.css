@@ -107,8 +107,17 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 5rem;
+  margin-left: 35rem;
+  margin-right: 35rem;
 }
+#like{
+  height: 6rem;
+}
+#calendario{
+  height: 5rem;
 
+}
 .segunda {
   background-color: white;
   padding: 2rem;
