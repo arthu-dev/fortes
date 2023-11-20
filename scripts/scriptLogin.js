@@ -4,7 +4,7 @@ function logar() {
 
   if (login == "cliente@fortes.com.br" && senha == "fortescliente") {
     alert("Sucesso");
-    location.href = "pratosdodia.html";
+    location.href = "index.html";
   } else if (
     login == "fornecedor@fortes.com.br" &&
     senha == "fortesfornecedor"
