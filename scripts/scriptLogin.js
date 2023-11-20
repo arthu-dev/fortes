@@ -4,24 +4,17 @@ function logar() {
 
   if (login == "cliente@fortes.com.br" && senha == "fortescliente") {
     alert("Sucesso");
-    location.href = "clientes.html";
+    location.href = "pratosdodia.html";
   } else if (
     login == "fornecedor@fortes.com.br" &&
     senha == "fortesfornecedor"
   ) {
     alert("Sucesso");
     location.href = "tabela.html";
-  } else if (
-    login == "funcionario@fortes.com.br" &&
-    senha == "fortesfuncionario"
-  ) {
-    alert("Sucesso");
-    location.href = "calendário.html";
   } else {
     alert("Usuário ou senha incorretos");
   }
 }
-
 
 let tabela_precos = {
   prato_1: 6.8,
@@ -32,19 +25,16 @@ let tabela_precos = {
   prato_6: 10.3,
 };
 
-
 let dropdownPratos = document.getElementById("select_pratos");
 let valor_prato = document.getElementById("valor_prato");
 let quantidade = document.getElementById("quantidade");
 let valor_total = document.getElementById("valor_total");
-
 
 dropdownPratos.addEventListener("change", function (e) {
 
   valor_prato.value = tabela_precos[e.target.value];
   valor_do_prato = tabela_precos[e.target.value];
 });
-
 
 function calcularValor() {
   valor_total.innerText = valor_do_prato * quantidade.value;
