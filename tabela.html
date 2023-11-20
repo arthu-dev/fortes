@@ -18,7 +18,7 @@
   <title>Dados Coletados</title>
 </head>
 
-<body> 
+<body>
   <div class="conteiner1">
     <div class="float">
       <a href="Login.html" class="usuário">
@@ -26,7 +26,7 @@
       </a>
       <a href="Login.html" class="nomeusuário">Nome de usuário</a>
     </div>
-     <div class="float2">
+    <div class="float2">
       <a href="calendário.html" class="calendário">Calendário</a>
       <a href="notificarFornecedores.html" class="fornecedor">Fornecedor</a>
       <a href="tabela.html" class="histórico">Histórico</a>
@@ -40,8 +40,6 @@
     <div class="floati">
       <label class="DataLabel" for="dataSelecionada">Selecione uma data:</label>
       <input type="date" id="dataSelecionada">
-      <button onclick="adicionarDados()">Adicionar Dados</button>
-      <button onclick="deletarDados()">Deletar Dados</button>
     </div>
   </div>
   <table class="tabela" border="10">
@@ -90,7 +88,9 @@
   <script src="scripts/TesteIndexedDB.js"></script>
   <script>
     window.onload = function () {
-      document.body.style.zoom = "70%"; // Define o zoom da página
+      document.body.style.zoom = "70%";
+
+      verificarTabelaVazia();
     };
   </script>
 </body>

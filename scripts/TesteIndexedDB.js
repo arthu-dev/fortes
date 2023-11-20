@@ -111,6 +111,25 @@ request.onerror = function (event) {
 };
 }
 
+
+function verificarTabelaVazia() {
+  //problema aqui, acho que chama essa funcao antes de chamar o banco e da erro
+  let transaction = db.transaction('Refeicoes', 'readonly');
+  let objectStore = transaction.objectStore('Refeicoes');
+
+  let request = objectStore.count();
+
+  request.onsuccess =  function (event) {
+      const count = event.target.result;
+      if (count === 0) {
+          adicionarDados();   
+      }
+         
+  };
+
+}
+
+
 const inputDate = document.getElementById('dataSelecionada');
 
 inputDate.addEventListener('change', function () {
