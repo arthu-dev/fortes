@@ -40,7 +40,25 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.teste {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
 
+.floati {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.DataLabel {
+  text-align: center;
+  font-family: "Jomhuria", serif;
+  font-size: 3rem;
+  color: var(--cor-secundaria);
+  margin: 10px;
+}
 .usuário {
   margin-left: 3rem;
   margin-right: 1rem;
