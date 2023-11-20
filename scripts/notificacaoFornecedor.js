@@ -143,13 +143,13 @@ function verificarTabelaVazia() {
 
     let request = objectStore.count();
 
-    request.onsuccess = async function (event) {
+    request.onsuccess =  function (event) {
         const count = event.target.result;
         if (count === 0) {
-            await adicionarDadosDoJson();
-            await mostrarTodosDados();
+             adicionarDadosDoJson();
+             mostrarTodosDados();
         } else {
-            await mostrarTodosDados();
+             mostrarTodosDados();
         }
 
     };
